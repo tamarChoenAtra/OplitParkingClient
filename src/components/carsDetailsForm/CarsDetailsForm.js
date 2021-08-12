@@ -24,103 +24,100 @@ export default () => {
 
     return (
         <>
-            <SafeAreaView style={styles.background} >
-                <Header
-                    headerRightElement={
-                        <TouchableOpacity>
-                            <ArrowBack />
-                        </TouchableOpacity>
-                    }
-                />
-                <Text style={styles.title}>
-                    {i18.t(`${createUserParking}.title`)}
-                </Text>
-                <Formik
-                    initialValues={{
-                        email: '',
-                        firstName: '',
-                        lastName: '',
-                        carKind: '',
-                        carSerNum: '',
-                        parkingNum: '',
-                        floor: '',
+            <Header
+                headerRightElement={
+                    <TouchableOpacity>
+                        <ArrowBack />
+                    </TouchableOpacity>
+                }
+            />
+            <Text style={styles.title}>
+                {i18.t(`${createUserParking}.title`)}
+            </Text>
+            <Formik
+                initialValues={{
+                    email: '',
+                    firstName: '',
+                    lastName: '',
+                    carKind: '',
+                    carSerNum: '',
+                    parkingNum: '',
+                    floor: '',
 
-                    }}
-                    onSubmit={values => console.log(values)}
-                >
-                    {({ handleChange, handleBlur, handleSubmit, values }) => (
-                        <View>
-                            <View style={styles.row}>
-                                <View style={styles.rightItem}>
-                                    <TextInput
-                                        onChangeText={handleChange('firstName')}
-                                        onBlur={handleBlur('firstName')}
-                                        value={values.firstName}
-                                        style={styles.input}
-                                        placeholder={i18.t(`${form}.firstName`)}
-                                        placeholderTextColor={'#FFFFFF99'}
-                                    />
-                                </View>
-                                <View style={styles.leftItem}>
-                                    <TextInput
-                                        onChangeText={handleChange('firstName')}
-                                        onBlur={handleBlur('firstName')}
-                                        value={values.firstName}
-                                        style={styles.input}
-                                        placeholder={i18.t(`${form}.lastName`)}
-                                        placeholderTextColor={'#FFFFFF99'}
-                                    />
-                                </View>
-                            </View>
-                            <TextInput
-                                onChangeText={handleChange('firstName')}
-                                onBlur={handleBlur('firstName')}
-                                value={values.firstName}
-                                style={styles.input}
-                                placeholder={i18.t(`${form}.kindCar`)}
-                                placeholderTextColor={'#FFFFFF99'}
-                            />
-                            <TextInput
-                                onChangeText={handleChange('firstName')}
-                                onBlur={handleBlur('firstName')}
-                                value={values.firstName}
-                                style={styles.input}
-                                placeholder={i18.t(`${form}.carNum`)}
-                                placeholderTextColor={'#FFFFFF99'}
-                            />
-                            <View style={styles.row}>
-                                <View style={styles.row}>
-                                    <Text style={styles.classicTxt}>{i18.t("form.addParking")}</Text>
-                                    <TouchableOpacity >
-                                        <LinearGradient colors={['#FFC803', '#FF6813']} style={styles.addBtn}>
-                                            <Text style={styles.plus}>+</Text>
-                                        </LinearGradient>
-                                    </TouchableOpacity>
-                                </View>
+                }}
+                onSubmit={values => console.log(values)}
+            >
+                {({ handleChange, handleBlur, handleSubmit, values }) => (
+                    <View>
+                        <View style={styles.row}>
+                            <View style={styles.rightItem}>
                                 <TextInput
                                     onChangeText={handleChange('firstName')}
                                     onBlur={handleBlur('firstName')}
                                     value={values.firstName}
                                     style={styles.input}
-                                    placeholder={i18.t(`${form}.floor`)}
+                                    placeholder={i18.t(`${form}.firstName`)}
                                     placeholderTextColor={'#FFFFFF99'}
                                 />
+                            </View>
+                            <View style={styles.leftItem}>
                                 <TextInput
                                     onChangeText={handleChange('firstName')}
                                     onBlur={handleBlur('firstName')}
                                     value={values.firstName}
                                     style={styles.input}
-                                    placeholder={i18.t(`${form}.parkingNum`)}
+                                    placeholder={i18.t(`${form}.lastName`)}
                                     placeholderTextColor={'#FFFFFF99'}
                                 />
                             </View>
-                            <Button onPress={handleSubmit} title="Submit" />
                         </View>
+                        <TextInput
+                            onChangeText={handleChange('firstName')}
+                            onBlur={handleBlur('firstName')}
+                            value={values.firstName}
+                            style={styles.input}
+                            placeholder={i18.t(`${form}.kindCar`)}
+                            placeholderTextColor={'#FFFFFF99'}
+                        />
+                        <TextInput
+                            onChangeText={handleChange('firstName')}
+                            onBlur={handleBlur('firstName')}
+                            value={values.firstName}
+                            style={styles.input}
+                            placeholder={i18.t(`${form}.carNum`)}
+                            placeholderTextColor={'#FFFFFF99'}
+                        />
+                        <View style={styles.row}>
+                            <View style={styles.row}>
+                                <Text style={styles.classicTxt}>{i18.t("form.addParking")}</Text>
+                                <TouchableOpacity >
+                                    <LinearGradient colors={['#FFC803', '#FF6813']} style={styles.addBtn}>
+                                        <Text style={styles.plus}>+</Text>
+                                    </LinearGradient>
+                                </TouchableOpacity>
+                            </View>
+                            <TextInput
+                                onChangeText={handleChange('firstName')}
+                                onBlur={handleBlur('firstName')}
+                                value={values.firstName}
+                                style={styles.input}
+                                placeholder={i18.t(`${form}.floor`)}
+                                placeholderTextColor={'#FFFFFF99'}
+                            />
+                            <TextInput
+                                onChangeText={handleChange('firstName')}
+                                onBlur={handleBlur('firstName')}
+                                value={values.firstName}
+                                style={styles.input}
+                                placeholder={i18.t(`${form}.parkingNum`)}
+                                placeholderTextColor={'#FFFFFF99'}
+                            />
+                        </View>
+                        <Button onPress={handleSubmit} title="Submit" />
+                    </View>
 
-                    )}
-                </Formik>
-            </SafeAreaView>
-
+                )}
+            </Formik>
         </>
     )
 }
